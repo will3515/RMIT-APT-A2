@@ -1,0 +1,171 @@
+REQUIREMENT 13
+VALGRIND REPORT
+----------------------------------------
+Full program run w/ valgrind:
+
+
+[s3660470@csitprdap03 a2]$ valgrind --show-reachable=yes --leak-check=full ./vm stock.dat coins.dat
+==21812== Memcheck, a memory error detector
+==21812== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==21812== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==21812== Command: ./vm stock.dat coins.dat
+==21812== 
+Main Menu:
+1. Display Items
+2. Purchase Items
+3. Save and Exit
+Administrator-Only Menu:
+4. Add Item
+5. Remove Item
+6. Display Coins
+7. Reset Stock
+8. Reset Coins
+9. Abort Program
+Select your option (1-9):1
+
+Items Menu
+
+ID    | Name               | Available | Price
+--------------------------------------------------
+I0002 | Apple Pie          | 20        | $ 3.00
+I0004 | Lemon Meringue Pie | 20        | $ 3.00
+I0005 | Lemon Tart         | 12        | $ 3.75
+I0001 | Meat Pie           | 50        | $ 3.50
+I0003 | Lemon Cheesecake   | 10        | $ 4.00
+
+Main Menu:
+1. Display Items
+2. Purchase Items
+3. Save and Exit
+Administrator-Only Menu:
+4. Add Item
+5. Remove Item
+6. Display Coins
+7. Reset Stock
+8. Reset Coins
+9. Abort Program
+Select your option (1-9):2
+
+Purchase Item
+-------------
+Please enter the id of the item you wish to purchase: I0005
+You have selected "Lemon Tart - A delicious lemon butter tart with a pastry base". This will cost you $3.75.
+Please hand over the money - type in the value of each note/coin in cents.
+Press enter on a new and empty line to cancel this purchase.
+You still need to give us $3.75:200
+You still need to give us $1.75:500
+Thank you. Here is your Lemon Tart, and your change of $3.25: 5c 20c $1 $2 
+Please come back soon.
+
+Main Menu:
+1. Display Items
+2. Purchase Items
+3. Save and Exit
+Administrator-Only Menu:
+4. Add Item
+5. Remove Item
+6. Display Coins
+7. Reset Stock
+8. Reset Coins
+9. Abort Program
+Select your option (1-9):4
+
+Add Item
+-------------
+
+This new meal item will have the Item id of I0006.
+Enter the item name: Coke Zero
+Enter the item description: 600ml bottle of refreshing cola with zero sugar
+Enter the price for this item: 3.75
+This item "Coke Zero - 600ml bottle of refreshing cola with zero sugar" has now been added to the menu.
+
+Main Menu:
+1. Display Items
+2. Purchase Items
+3. Save and Exit
+Administrator-Only Menu:
+4. Add Item
+5. Remove Item
+6. Display Coins
+7. Reset Stock
+8. Reset Coins
+9. Abort Program
+Select your option (1-9):1
+
+Items Menu
+
+ID    | Name               | Available | Price
+--------------------------------------------------
+I0002 | Apple Pie          | 20        | $ 3.00
+I0006 | Coke Zero          | 20        | $ 3.75
+I0004 | Lemon Meringue Pie | 20        | $ 3.00
+I0005 | Lemon Tart         | 11        | $ 3.75
+I0001 | Meat Pie           | 50        | $ 3.50
+I0003 | Lemon Cheesecake   | 10        | $ 4.00
+
+Main Menu:
+1. Display Items
+2. Purchase Items
+3. Save and Exit
+Administrator-Only Menu:
+4. Add Item
+5. Remove Item
+6. Display Coins
+7. Reset Stock
+8. Reset Coins
+9. Abort Program
+Select your option (1-9):5
+
+Remove Item
+-------------
+
+Enter the item id of the item to remove from the menu: I0003
+"I0003 - Lemon Cheesecake" has been removed from the system.
+Main Menu:
+1. Display Items
+2. Purchase Items
+3. Save and Exit
+Administrator-Only Menu:
+4. Add Item
+5. Remove Item
+6. Display Coins
+7. Reset Stock
+8. Reset Coins
+9. Abort Program
+Select your option (1-9):1
+
+Items Menu
+
+ID    | Name               | Available | Price
+--------------------------------------------------
+I0002 | Apple Pie          | 20        | $ 3.00
+I0006 | Coke Zero          | 20        | $ 3.75
+I0004 | Lemon Meringue Pie | 20        | $ 3.00
+I0005 | Lemon Tart         | 11        | $ 3.75
+I0001 | Meat Pie           | 50        | $ 3.50
+
+Main Menu:
+1. Display Items
+2. Purchase Items
+3. Save and Exit
+Administrator-Only Menu:
+4. Add Item
+5. Remove Item
+6. Display Coins
+7. Reset Stock
+8. Reset Coins
+9. Abort Program
+Select your option (1-9):3
+
+Goodbye. 
+
+==21812== 
+==21812== HEAP SUMMARY:
+==21812==     in use at exit: 0 bytes in 0 blocks
+==21812==   total heap usage: 18 allocs, 18 frees, 4,368 bytes allocated
+==21812== 
+==21812== All heap blocks were freed -- no leaks are possible
+==21812== 
+==21812== For counts of detected and suppressed errors, rerun with: -v
+==21812== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
